@@ -1,4 +1,4 @@
-# jsp advanced
+# jsp objects
 
 
 
@@ -51,3 +51,22 @@ jsp 底层的操作过程：
 
  
 # 结论：在jsp页面中可以统一使用out.print() 来输出任何类型数据
+
+
+### static include     (常用)
+
+![staticInclude](imagePool/staticInclude.png)
+    
+        - 静态包含不会翻译被包含的 jsp 页面
+        - 本质上是把被包含的 jsp 页面的代码拷贝到包含的位置执行输出
+
+
+
+### dynamic include
+
+![dynamicInclude](imagePool/dynamicInclude.png)
+
+        - 动态包含会把包含的 jsp 页面也翻译成为 java 代码
+        - 动态包含底层代码使用如下，代码去调用被包含的jsp页面执行输出
+                JspRuntimeLibrary.include(request, response, "/include/footer.jsp", out , false);
+        
